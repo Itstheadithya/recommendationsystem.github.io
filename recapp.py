@@ -21,7 +21,14 @@ def recommend(movie):
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies,recommended_movies_posters
 
-
+page_bg_img = '''
+<style>
+      .stApp {
+  background-image: url("https://joseluisfernandez.me/wp-content/uploads/2020/02/Imagen_destacada_film-scaled.jpg");
+  background-size: cover;
+}
+</style>
+'''
 
 movies_dict=pickle.load(open('movies_d.pkl','rb'))
 movies=pd.DataFrame(movies_dict)
