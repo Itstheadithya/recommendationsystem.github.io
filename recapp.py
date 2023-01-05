@@ -21,14 +21,21 @@ def recommend(movie):
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies,recommended_movies_posters
 
-page_bg_img = '''
-<style>
-      .stApp {
-  background-image: url("https://joseluisfernandez.me/wp-content/uploads/2020/02/Imagen_destacada_film-scaled.jpg");
-  background-size: cover;
-}
-</style>
-'''
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://img.freepik.com/premium-photo/3d-rendering-empty-dimmy-theatrical-stage-with-red-curtains-drawn-rows-vacant-seats_146508-4872.jpg?auto=format&h=200");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+add_bg_from_url() 
 
 movies_dict=pickle.load(open('movies_d.pkl','rb'))
 movies=pd.DataFrame(movies_dict)
